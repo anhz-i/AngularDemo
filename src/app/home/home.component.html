@@ -1,2 +1,20 @@
 <h1>Đây là component Home ha</h1>
 <h2>My name is {{ name }}</h2>
+<input type="text" value="Name" title="Day la name">
+<br>
+Input hear: 
+<input type="text" [value]="name" title="Day la {{ name }}" [(ngModel)]="name">
+<br>
+<input type="text" [value]="name" [title]="'Day la '+name">
+<br>
+<button (click)="resetName()">Reset ten</button>
+<br>
+<h2 *ngIf="age < 25">Tuoi tre tai kout</h2>
+<br>
+<h2 *ngIf="age >= 25">Tuoi gia suc iu</h2>
+<br>
+
+<input type="text" [value]="age" title="{{ age }} tuoi" [(ngModel)]="age">
+<div *ngIf="age <= 25; then tre; else gia;"></div>
+<ng-template #tre><h2>Tuoi tre tai kout</h2></ng-template>
+<ng-template #gia><h2>Tuoi gia suc iu</h2></ng-template>
